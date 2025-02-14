@@ -179,39 +179,7 @@ namespace YourNamespace.Controllers
     }
 }
 ```
-## Step 6: Secure Endpoints with JWT
-
-Now, modify any controller (e.g., `StudentController.cs`) to require authentication using JWT.
-
-### Example of Securing an Endpoint:
-
-To secure a controller or an endpoint, simply add the `[Authorize]` attribute above the controller class. This ensures that the endpoint requires a valid JWT token for access.
-
-```csharp
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using YourNamespace.Data;
-
-[Authorize] // This attribute ensures that the endpoint requires authentication
-[ApiController]
-[Route("api/[controller]/[action]")]
-public class StudentController : ControllerBase
-{
-    private readonly ApplicationDbContext _context;
-
-    public StudentController(ApplicationDbContext context)
-    {
-        _context = context;
-    }
-
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
-    {
-        return await _context.Students.ToListAsync();
-    }
-}
-```
-# Step 7: Implement Login and JWT Token Management in ASP.NET Core
+# Step 6: Implement Login and JWT Token Management in ASP.NET Core
 
 This guide demonstrates how to handle user login, generate a **JWT token** on successful login, store the **JWT token** and user details in the session on the client-side, and authenticate users using the stored JWT token in subsequent API calls.
 
@@ -233,7 +201,7 @@ namespace YourNamespace.Models
     }
 }
 ```
-# Step 8: User Login and JWT Token Management in ASP.NET Core
+# Step 7: User Login and JWT Token Management in ASP.NET Core
 
 In this step, we implement the **UserController** to handle login logic, make an API call to authenticate the user, and store the **JWT token** in the session after a successful login. The **JWT token** will be used for subsequent API calls that require authentication.
 
@@ -311,7 +279,7 @@ namespace YourNamespace.Controllers
     }
 }
 ```
-# Step 9: Passing JWT Token from UI to API
+# Step 8: Passing JWT Token from UI to API
 
 In this step, we will modify the **UI controller** to pass the **JWT token** in the **Authorization header** when making a request to the API. This ensures that the request to the API is authenticated using the stored JWT token.
 
@@ -370,7 +338,7 @@ public async Task<IActionResult> CustomerList()
 #endregion
 ```
 
-# Step 10: Authenticating API Requests Using JWT Token
+# Step 9: Authenticating API Requests Using JWT Token
 
 In this step, we will modify the **API controller** to authenticate incoming requests by validating the **JWT token** passed in the **Authorization header**. This ensures that the API only processes requests from authenticated users.
 
