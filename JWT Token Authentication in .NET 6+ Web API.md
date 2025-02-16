@@ -3,10 +3,12 @@
 ## Step 1: Install Required Packages
 Run the following commands in the **Package Manager Console**:
 
-- `Install-Package Microsoft.AspNetCore.Authentication.JwtBearer`
-- Note: If the latest version is not supported or compatible with your .NET version, consider using an older, stable version like 8.0.13 of Microsoft.AspNetCore.Authentication.JwtBearer or any other compatible version.
-- `Install-Package Microsoft.IdentityModel.Tokens`
+- `Install-Package Microsoft.AspNetCore.Authentication.JwtBearer`  
+  *Note: If the latest version is not supported or compatible with your .NET version, consider using an older, stable version like `8.0.13` of `Microsoft.AspNetCore.Authentication.JwtBearer` or any other compatible version.*
+
+- `Install-Package Microsoft.IdentityModel.Tokens`  
 - `Install-Package System.IdentityModel.Tokens.Jwt`
+
 
 ## Step 2: Configure appsettings.json
 
