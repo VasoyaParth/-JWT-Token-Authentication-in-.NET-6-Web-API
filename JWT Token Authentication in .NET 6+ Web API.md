@@ -10,19 +10,28 @@ Run the following commands in the **Package Manager Console**:
 - `Install-Package System.IdentityModel.Tokens.Jwt`
 
 
-## Step 2: Configure appsettings.json
+## Step 2: Configure `appsettings.json`
 
 Add the following sections inside `appsettings.json`:
 
 ```json
 {
   "Jwt": {
-    "Key": "ThisIsASecretKeyForJWTTokenAuthentication",
-    "Issuer": "YourIssuer",
-    "Audience": "YourAudience"
+    "Key": "ThisIsASecretKeyForJWTTokenAuthentication", 
+    // Use a strong, random key for better security.
+    // Example: Generate a secure key using tools like OpenSSL or any online key generator.
+
+    "Issuer": "https://localhost:5001", 
+    // Issuer: This is the server that issues the token. 
+    // Typically, it's the URL of your API (e.g., https://localhost:5001 or your deployed API URL).
+
+    "Audience": "https://localhost:5001" 
+    // Audience: The intended recipient of the token. 
+    // Usually, it's the same as your API URL (e.g., https://localhost:5001).
   },
   "ConnectionStrings": {
     "ConnectionString": "Your_SQL_Server_Connection_String_Here"
+    // Your database connection string goes here.
   }
 }
 ```
